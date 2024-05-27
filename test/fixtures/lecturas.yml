@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bodega: MyText
+  local: MyText
+  factor: MyText
+  lectura_anterior: 1
+  lectura_actual: 1
+  consumo: 1
+
+two:
+  bodega: MyText
+  local: MyText
+  factor: MyText
+  lectura_anterior: 1
+  lectura_actual: 1
+  consumo: 1
