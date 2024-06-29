@@ -5,41 +5,22 @@
 <section class="flex flex-col ml-20 mr-20 mb-20 mt-5 px-10 border-2 border-gray-200 items-center justify-center rounded-lg">
 
     <div class="mb-10 w-full">
-        <%= form_with(model: @Lectura) do |form| %>
-
-            <div class="mt-10">
-                <strong> <%= form.label :bodega, "BODEGA", class:"label-form"%></strong>
-                <%= form.text_field :bodega,  class: "field-form" %>
-            </div>
-
-            <div class="mt-2">
-                <strong><%= form.label :local, "LOCAL", class:"label-form"%></strong>
-                <%= form.text_field :local,  class: "field-form" %>
-            </div>
-
-            <div class="mt-2">
-                <strong><%= form.label :factor, "FACTOR", class:"label-form"%></strong>
-                <%= form.text_field :factor,  class: "field-form" %>
-            </div>
-
-            <div class="mt-2">
-                <strong><%= form.label :lectura_anterior, "LECTURA ANTERIOR", class:"label-form"%></strong>
-                <%= form.text_field :lectura_anterior,  class: "field-form" %>
-            </div>
+        <%= form_with(model: @lectura, local: true) do |form| %>
 
             <div class="mt-2">
                 <strong><%= form.label :lectura_actual, "LECTURA ACTUAL", class:"label-form"%></strong>
                 <%= form.text_field :lectura_actual, class: "field-form" %>
             </div>
-
+            
             <div class="mt-2">
-                <strong><%= form.label :consumo, "CONSUMO", class:"label-form"%></strong>
-                <%= form.text_field :consumo,  class: "field-form" %>
+                <strong><%= form.label :device_id, "ID", class:"label-form"%></strong>
+                <%= form.text_field :device_id,  class: "field-form" %>
             </div>
-    
+
             <div class="mt-5 mb-10 flex justify-center items-center">
                 <%= form.submit "Guardar", class: "btn-primary bg-green-800" %> 
             </div>
+
 
         <% end %>
     </div>

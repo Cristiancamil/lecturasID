@@ -20,6 +20,10 @@
   .field-form {
     @apply w-full mb-5 rounded-lg text-sm font-semibold;
   }
+
+  .size-field {
+    width:rem;
+  }
 }
 
 

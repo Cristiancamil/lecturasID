@@ -6,9 +6,9 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
-
+    <script src="https://cdn.tailwindcss.com"></script>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    
+    <%= javascript_include_tag('custom.js')%>
     <%= javascript_importmap_tags %>
   </head>
 
@@ -18,9 +18,6 @@
       <div class="w-full p-3 text-center bg-green-300 font-semibold">
         <%= notice %>
       </div>
-    <% end %>
-    <% flash.each do |type, message| %>
-      <div class="alert alert-<%= type %>"><%= message %></div>
     <% end %>
     <%= yield %> 
   </body>

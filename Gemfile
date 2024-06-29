@@ -8,8 +8,6 @@ gem "rails", "~> 7.1.3", ">= 7.1.3.3"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
-gem 'pg', '~> 1.5', '>= 1.5.6'
-
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 
@@ -66,3 +64,5 @@ group :test do
 end
 
 gem "tailwindcss-rails", "~> 2.6"
+
+gem "pg", "~> 1.5"

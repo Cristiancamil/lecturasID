@@ -6,25 +6,25 @@
 #
 default: &default
   adapter: postgresql
-  host: hansken.db.elephantsql.com
+  host: localhost
   port: 5432
-  username: ktljkptn
-  password: RQIgJUtt65KMjGNhOqavfWXzwQAKkb01
+  username: postgres
+  password: Central.2024*
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  sslmode: require
+  # sslmode: require
   encoding: unicode
 
 development:
   <<: *default
-  database: ktljkptn
+  database: lecturas_id_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: ktljkptn
+  database: lecturas_id_test
 
-production:
-  <<: *default
-  database: ktljkptn
+# production:
+#   <<: *default
+#   database: ktljkptn

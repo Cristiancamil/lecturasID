@@ -1,1 +1,39 @@
-<h1>Show article</h1>
+<div class="main-title mb-10 flex flex-col px-10 items-center justify-center">
+    <h1> Detalle del ID</h1>
+</div>
+
+<div class="flex flex-col px-10 items-center justify-center rounded-lg">
+    <%= form_tag lecturas_path, :method => "get" do  %>
+        <%= text_field_tag :search, params[:search], style: "width: 8rem;"%>
+        <%= submit_tag "Buscar", class: "btn-primary bg-green-800" %>
+    <% end %>
+</div>
+
+<% if @Lectura.present? %>
+    <section class="flex flex-col m-20 px-10 border-2 border-gray-200 items-center justify-center rounded-lg">
+        <div class="mb-10 w-full">
+            <%= form_with(model: @Lectura) do |form| %>
+
+                <div class="mt-2">
+                    <strong><%= form.label :lectura_anterior, "LECTURA ANTERIOR", class:"label-form"%></strong>
+                    <%= form.text_field :lectura_anterior, disabled: true, class: "field-form" %>
+                </div>
+
+                <div class="mt-2">
+                    <strong><%= form.label :lectura_actual, "LECTURA ACTUAL", class:"label-form"%></strong>
+                    <%= form.text_field :lectura_actual, class: "field-form" %>
+                </div>
+
+                <div class="mt-2">
+                    <strong><%= form.label :consumo, "CONSUMO", class:"label-form"%></strong>
+                    <%= form.text_field :consumo, disabled: true, class: "field-form" %>
+                </div>
+        
+                <div class="mt-5 mb-10 flex justify-center items-center">
+                    <%= form.submit "Guardar", class: "btn-primary bg-green-800" %> 
+                </div>
+
+            <% end %>
+        </div> 
+    </section>
+<% end %>

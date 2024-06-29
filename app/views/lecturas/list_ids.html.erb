@@ -1,0 +1,63 @@
+<div class="main-title mb-10 flex flex-col px-10 items-center justify-center">
+    <h1> Lecturas </h1>
+</div>
+
+<div class="flex h-16 items-center justify-evenly">
+    <div class="flex flex-col px-10 items-center justify-center rounded-lg">
+
+        <%= form_with url: root_path, method: :get, local: true do |form| %>
+            <%= form.text_field :query, style: "width: 8rem;" %>
+            <%= form.submit "Search", class: "btn-primary bg-green-800 px-3 py-2" %>
+        <% end %>
+    </div>
+
+     <%= link_to "Nueva Lectura", new_lectura_path, class: "bg-gray-700 text-white rounded-md px-3 py-2 text-sm font-medium" %> 
+     
+</div>
+
+
+<div class="w-full sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-1/3 min-w-full divide-y divide-gray-200 p-6">
+    <table style="width: 100%">
+    <thead class="bg-gray-50 border-b-2 border-gray-200">
+        <tr>
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-2/0">No</th>    
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-2/0">ID</th>
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-1/9">Lectura Anterior</th>
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-1/9">Lectura Actual</th>
+            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-1/6">Consumo</th>
+        </tr>
+    </thead>
+    <tbody class="bg-white divide-y divide-gray-200">
+        <% @Lecturas.each_with_index do |lect, index| %>
+            <tr class="bg-white hover:bg-green-100">
+                <td class="px-6 py-4 whitespace-nowrap w-1/9"><%= index + 1 %></td>
+                <td class="px-6 py-4 whitespace-nowrap w-1/9"><%= lect.device_id %></td>
+                <td class="px-6 py-4 whitespace-nowrap w-1/9"><%= lect.lectura_anterior %></td>
+                <td class="px-6 py-4 whitespace-nowrap w-1/9"><%= lect.lectura_actual %></td>
+                <td class="px-6 py-4 whitespace-nowrap w-1/9"><%= lect.consumo %></td>
+            </tr>
+        <% end %>
+    </tbody>
+    </table>
+</div>
+
+<!--
+    <% @Lecturas.each do |lect| %>
+        <section class="flex flex-col border-2 border-gray-200 items-center justify-center rounded-lg">
+            <div>
+                <div class="mt-2">
+                    <strong> LECTURA ANTERIOR: <%= lect.lectura_anterior%></strong>
+                </div>
+
+                <div class="mt-2">
+                    <strong>LECTURA ACTUAL: <%= lect.lectura_actual%></strong>
+                </div>
+
+                <div class="mt-2">
+                    <strong>CONSUMO: <%= lect.consumo%></strong>
+                </div>
+
+            </div> 
+        </section>
+    <% end %>
+-->
